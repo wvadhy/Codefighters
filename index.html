@@ -1,14 +1,265 @@
 <!DOCTYPE html>
 
 <head>
-  <title>PROJECT_X</title>
+  <title>CODE FIGHTERS</title>
+
+  <!-- Icon -->
+  <link rel="icon" href="imgs/skull.ico">
+
+  <!-- Font(s) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&family=Press+Start+2P&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+
+  <!-- Styling via CSS -->
   <link rel="stylesheet" href="styling/style.css">
+  <link rel="stylesheet" href="styling/transitions.css">
+
 </head>
 
-<body>
-  <h1>
-    CODE FIGHTERS
-  </h1>
+<body onload="fade();">
+
+  <!-- Transition to loading -->
+    <div class="transition transition-1 is-active"></div>
+
+  <!-- Theme -->
+  <embed name="Theme" src="music/theme.mp3" loop="false" hidden="true" autostart="true">
+
+  <!-- Logo -->
+
+  <div class="intro">
+    <h1>
+      <img class="git_branch" src="imgs/git_branch.png" alt="">
+        CODE FIGHTERS
+      <img class="sword_r" src="imgs/sword_r.png" alt="">
+    </h1>
+  </div>
+
+  <div class="version">
+    <strong>{</strong> v1.0 <strong>}</strong>
+  </div>
+
+  <!-- Motto -->
+  <div class="">
+    <h3>
+      Create your warrior...
+    </h3>
+  </div>
+
+  <!-- Gender select -->
+  <div class="gender">
+    <div class="btn-group me-2" role="group" aria-label="First group">
+      <button type="button" class="btn btn-dark">Male</button>
+      <button type="button" class="btn btn-dark">Female</button>
+    </div>
+  </div>
+
+  <!-- Customisation -->
+  <div class="customisation">
+    <div id="character_select" class="carousel slide">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="imgs/stickman.png" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img src="imgs/stickman.png" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img src="imgs/stickman.png" class="d-block w-100" alt="...">
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#character_select" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#character_select" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </div>
+
+  <form class="x needs-validation" novalidate>
+    <!-- Name input -->
+    <div class="enter_name">
+      <div class="input-group mb-3">
+        <input type="text" class="form-control" placeholder="Your name?" aria-label="Username" required>
+      </div>
+    </div>
+
+    <!-- Password input -->
+    <div class="enter_pass">
+      <div class="input-group mb-3"
+            data-bs-toggle="tooltip" data-bs-placement="right"
+            data-bs-custom-class="custom-tooltip"
+            data-bs-title="Password must be 8 characters">
+        <input id="pswrd" type="password" class="form-control" placeholder="Your password?" aria-label="Password" required>
+      </div>
+    </div>
+
+    <!-- Play button -->
+    <div class="play">
+      <a href="loading.html">
+        <button type="submit" class="btn btn-danger btn-lg">
+          <strong>FIGHT</strong>
+        </button>
+      </a>
+    </div>
+  </form>
+
+  <div class="leaderboard">
+    <a href="#mid_jump">
+      <button type="button" class="btn btn-outline-light">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-down-fill" viewBox="0 7 16 16">
+          <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/>
+        </svg>
+      </button>
+    </a>
+  </div>
+
+
+  <div id="container" class="tips_container">
+	   <div id="text" class="tips"></div><
+  </div>
+
+  <img class="wave_1" src="imgs/wave_1.svg" alt="">
+
+  <!-- Second Page Down -->
+  <div class="footer_area">
+    <div class="row">
+      <div class="col">
+        <div id="mid_jump" class="footer_header">
+          <h2>What is CodeFighters?</h2><div id="cursor"></div>
+        </div>
+        <br>
+        <div class="footer_para">
+          <p>
+            <strong>CodeFighters</strong> is a competitive leetcode(esque) game
+            which has players duel out their programming knowledge against opponents
+            in real time online!
+          </p>
+          <p>
+            Players will attain rating points after defeating enemies, these will then
+            be used to calculate their position on the ladder, the higher you go, the
+            tougher foes and questions you will face.
+          </p>
+        </div>
+        <nav>
+          <ul class="pagination">
+            <li class="page-item"><a class="page-link" href="#mid_jump"><strong><</strong></a></li>
+            <li class="page-item"><a class="page-link" href="#mid_jump">/</a></li>
+            <li class="page-item"><a class="page-link" href="#mid_jump"><strong>></strong></a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="col">
+        <div id="mid_jump" class="footer_header">
+
+        </div>
+      <div id="carouselExampleCaptions" class="carousel slide">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3" aria-label="Slide 4"></button>
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="4" aria-label="Slide 5"></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="imgs/dark-grey.png" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+              <img src="imgs/joystick.svg" alt="">
+              <p>Solve questions</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="imgs/dark-grey.png" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+              <img src="imgs/fire.svg" alt="">
+              <p>Deal damage</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="imgs/dark-grey.png" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+              <img src="imgs/magic.svg" alt="">
+              <p>Use abilities</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="imgs/dark-grey.png" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+                <img src="imgs/globe-americas.svg" alt="">
+                <p>Battle opponents around the world</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="imgs/dark-grey.png" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+                <img src="imgs/yin-yang.svg" alt="">
+                <p>Become king</p>
+            </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+      </div>
+      <div class="col">
+        <div id="mid_jump" class="footer_header">
+          <h2>Changelog</h2>
+          <img class="sword" src="imgs/sword.png" alt="">
+        </div>
+        <br>
+        <div class="overflow-auto p-3">
+           <h3>Version <code>1.0</code></h3>
+           abcdefghijklmnopqrstuvqxyz + hello world
+           abcdefghijklmnopqrstuvqxyz + hello world
+           abcdefghijklmnopqrstuvqxyz + hello world
+           abcdefghijklmnopqrstuvqxyz + hello world
+           abcdefghijklmnopqrstuvqxyz + hello world
+           abcdefghijklmnopqrstuvqxyz + hello world
+           abcdefghijklmnopqrstuvqxyz + hello world
+           abcdefghijklmnopqrstuvqxyz + hello world
+           abcdefghijklmnopqrstuvqxyz + hello world
+        </div>
+    </div>
+  </div>
+</div>
+
+<!-- Music -->
+
+<img src="imgs/wave_2.svg" alt="">
+
+<div class="page_down_2">
+  <img class="cross_swords" src="imgs/cross_swords.png">
+  <h2>Made with luv</h2>
+</div>
+
 </body>
+
+<script src="movement.js"></script>
+<script src="script.js"></script>
+<script>
+
+  const t_element = document.querySelector('.transition');
+
+  function fade()
+  {
+    setTimeout(() =>
+    {
+      t_element.classList.remove('is-active');
+    }, 200)
+  }
+
+</script>

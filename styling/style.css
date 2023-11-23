@@ -1,0 +1,318 @@
+body {
+  background-color: black;
+  overflow-x: hidden;
+  text-align: center;
+  transition: background-color 1s ease;
+}
+
+h1 {
+  color: white;
+  text-align: center;
+  font-size: 80px;
+  font-family: "Press Start 2P";
+  animation: wobbly 1s ease infinite;
+}
+
+h3 {
+  color: white;
+  text-align: center;
+  font-size: 30px;
+  animation: fade-in 2s ease;
+}
+
+h2 {
+  color: white;
+  text-align: center;
+  font-size: 20px;
+}
+
+h4 {
+  margin: auto;
+  color: white;
+}
+
+.intro {
+  margin-top: 5%;
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+}
+.intro .git_branch {
+  position: absolute;
+  width: 50px;
+  height: 40px;
+}
+.intro .sword_r {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+}
+
+.gender {
+  text-align: center;
+}
+
+.customisation {
+  border-radius: 30px;
+  padding-top: 20px;
+  margin: auto;
+  width: 100px;
+  height: 50px;
+}
+
+.btn.btn-danger {
+  width: 300px;
+  height: 80px;
+  border-radius: 50px;
+}
+
+.btn.btn-outline-light {
+  width: 200px;
+  height: 25px;
+  border-radius: 30px;
+}
+
+.input-group:hover {
+  padding-top: 5px;
+  transition: padding-top 0.5s;
+}
+
+.input-group {
+  padding-top: 0px;
+  transition: padding-top 0.5s;
+}
+
+.enter_name {
+  padding-top: 100px;
+  width: 300px;
+  margin: auto;
+}
+
+.enter_pass {
+  width: 300px;
+  margin: auto;
+}
+
+.form-control {
+  width: 80px;
+  height: 50px;
+  text-align: center;
+  background-color: black;
+  border-width: thick;
+  color: white;
+  border-radius: 20px;
+}
+
+.form-control:focus {
+  width: 80px;
+  background: black;
+  color: white;
+  outline: none !important;
+  border-color: #C70039;
+  box-shadow: 0 0 10px red;
+}
+
+.form-control::placeholder {
+  color: #61677A;
+}
+
+.custom-tooltip {
+  --bs-tooltip-bg: var(--bd-violet-bg);
+  --bs-tooltip-color: var(--bs-white);
+}
+
+.play {
+  padding-top: 20px;
+  text-align: center;
+}
+
+.leaderboard {
+  padding-top: 5px;
+  text-align: center;
+}
+
+.tips_container {
+  height: 1px;
+  padding-top: 10px;
+}
+.tips_container .tips {
+  text-align: center;
+  color: #D8D9DA;
+  font-family: "JetBrains Mono";
+}
+
+.version {
+  text-align: center;
+  color: #61677A;
+}
+
+.footer_area {
+  background-color: #0F0F0F;
+  height: 400px;
+  text-align: center;
+}
+.footer_area .pagination {
+  margin: auto;
+  justify-content: center;
+}
+.footer_area .pagination .page-link {
+  color: red;
+}
+.footer_area .carousel {
+  border-radius: 55px 55px 55px 55px;
+  overflow: hidden;
+}
+.footer_area .sword {
+  position: absolute;
+  padding-bottom: 60px;
+  width: 200px;
+  height: 200px;
+}
+.footer_area .footer_header {
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+}
+.footer_area .footer_para {
+  width: 400px;
+  text-align: center;
+  margin: auto;
+  font-size: 16px;
+  color: #F6F1F1;
+}
+.footer_area .overflow-auto {
+  max-width: 260px;
+  max-height: 200px;
+  text-align: center;
+  margin: auto;
+  margin-top: 50px;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+}
+
+.page_down_2 {
+  height: 120px;
+}
+.page_down_2 .cross_swords {
+  width: 60px;
+  height: 60px;
+}
+
+#cursor {
+  background: white;
+  margin-left: 3px;
+  -webkit-animation: blink 0.8s infinite;
+  width: 7px;
+  height: 30px;
+}
+
+.countdown {
+  margin-top: 20%;
+  display: flex;
+  justify-content: center;
+}
+
+.load {
+  display: flex;
+  justify-content: center;
+  padding-top: 10px;
+}
+.load #spin {
+  margin: auto;
+  width: 80px;
+  height: 80px;
+  box-shadow: 0px 0px 40px red;
+  background-color: red;
+}
+
+.back_g {
+  position: relative;
+}
+.back_g .in_container {
+  display: flex;
+  justify-content: center;
+  padding-top: 400px;
+}
+.back_g .in {
+  width: 450px;
+  height: 300px;
+  border-radius: 10px;
+  border-width: medium;
+  border-style: outset;
+}
+.back_g .progress {
+  width: 400px;
+  height: 80px;
+  border-width: 4px;
+  border-style: solid;
+  border-radius: 10px;
+  box-shadow: 10px 10px 10px black;
+}
+.back_g h1 {
+  padding-top: 20px;
+  color: white;
+  font-family: "Press Start 2P";
+  font-size: 80px;
+}
+.back_g #p1_user {
+  color: #D8D9DA;
+  text-align: left;
+  padding-left: 10px;
+  font-size: 30px;
+}
+.back_g #p2_user {
+  color: #D8D9DA;
+  text-align: right;
+  padding-right: 10px;
+  font-size: 30px;
+}
+
+@-webkit-keyframes blink {
+  0% {
+    background: #222;
+  }
+  50% {
+    background: white;
+  }
+  100% {
+    background: #222;
+  }
+}
+@keyframes wobbly {
+  0% {
+    font-size: 70px;
+    color: white;
+  }
+  50% {
+    font-size: 80px;
+    color: #D80032;
+  }
+  100% {
+    font-size: 70px;
+    color: white;
+  }
+}
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

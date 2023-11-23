@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+
+<head>
+  <title>CODE FIGHTERS</title>
+
+  <!-- Icon -->
+  <link rel="icon" href="imgs/skull.ico">
+
+  <!-- Font(s) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&family=Press+Start+2P&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+
+  <!-- Styling via CSS -->
+  <link rel="stylesheet" href="styling/style.css">
+
+  <!-- Javascript -->
+  <script type="matchmaking.js"></script>
+
+</head>
+
+<body onload="pseudo_timer()" style="background-image: url('imgs/loading_bg.gif');">
+
+  <!-- Countdown timer -->
+  <div class="countdown">
+    <h4>ETA: <code id="cur_time">~</code>s</h4>
+  </div>
+
+  <!-- Glowing spinner -->
+  <div class="load">
+    <div id="spin" class="spinner-grow" role="status"></div>
+  </div>
+
+</body>
+
+<!--Loading logic (pseudo) -->
+<script>
+var x = Math.floor(Math.random() * (15 - 5) + 5);
+var y = document.getElementById("spin")
+var z = x
+
+function pseudo_timer(){
+  var pseudo_timer = setInterval(function() {
+
+    q_start = Math.floor(Math.random() * (3 - 1) + 1)
+
+    x -= 1;
+
+    var temp = document.getElementById("cur_time");
+
+    if(x <= (Math.floor(z / 1.5))){
+      y.style.boxShadow = "0px 0px 40px yellow";
+      y.style.backgroundColor = "yellow";
+    }
+
+    if (x <= (Math.floor(z / 3))) {
+      y.style.boxShadow = "0px 0px 40px green";
+      y.style.backgroundColor = "green";
+      if(q_start === 1){
+        x = 0;
+      }
+    }
+
+    temp.innerHTML = x;
+
+    if(x <= 0){
+      clearInterval(pseudo_timer);
+      found();
+    }
+
+  }, 1000);
+}
+
+function found(){
+  setTimeout(function(){
+    window.open("game.html")
+  }, 1000)
+}
+
+</script>

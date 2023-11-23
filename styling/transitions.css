@@ -1,0 +1,16 @@
+.transition-1
+{
+  position: fixed;
+  top: 100%;
+  left: 0;
+  right: 0;
+  height: 100%;
+  z-index: 9;
+  background-color: black;
+  transition: 0.3s;
+}
+
+.transition-1.is-active
+{
+  top: 0px;
+}
