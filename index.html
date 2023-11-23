@@ -243,18 +243,24 @@
 
 <div class="page_down_2">
 
+  <h3>Found a <img src="imgs/bug-fill.svg" alt="">?</h3>
+
+  <br>
+
   <form class="z needs-validation" novalidate>
     <div class="mb-3">
-      <label for="exampleFormControlInput1" class="form-label">Email address</label>
-      <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
-    </div>
-    <div class="mb-3">
-      <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label>
-      <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+      <label for="exampleFormControlInput1" class="form-label">Email</label>
+      <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com" required>
     </div>
     <div class="input-group mb-3">
+      <label for="inputGroupFile01" class="form-label">Screenshot</label>
       <input type="file" class="form-control" id="inputGroupFile01">
     </div>
+    <div class="mb-3">
+      <label for="exampleFormControlTextarea1" class="form-label">Description of bug</label>
+      <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" required></textarea>
+    </div>
+    <button type="submit" class="btn btn-outline-danger mb-3">SEND</button>
   </form>
 
   <img class="cross_swords" src="imgs/cross_swords.png">

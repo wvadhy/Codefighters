@@ -268,10 +268,25 @@ h4
 {
   height: 500px;
 
+  .form-label
+  {
+    text-align: center;
+    color: white;
+  }
+
+  .form-control
+  {
+    width: 400px;
+    margin: auto;
+    text-align: center;
+    border-radius: 20px;
+  }
+
   .input-group
   {
-    width: 300px;
+    width: 400px;
     margin: auto;
+    border-radius: 20px;
   }
 
   .cross_swords

@@ -198,9 +198,20 @@ h4 {
 .page_down_2 {
   height: 500px;
 }
-.page_down_2 .input-group {
-  width: 300px;
+.page_down_2 .form-label {
+  text-align: center;
+  color: white;
+}
+.page_down_2 .form-control {
+  width: 400px;
   margin: auto;
+  text-align: center;
+  border-radius: 20px;
+}
+.page_down_2 .input-group {
+  width: 400px;
+  margin: auto;
+  border-radius: 20px;
 }
 .page_down_2 .cross_swords {
   width: 60px;
