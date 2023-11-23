@@ -13,17 +13,17 @@ h1 {
   animation: wobbly 1s ease infinite;
 }
 
+h2 {
+  color: white;
+  text-align: center;
+  font-size: 40px;
+}
+
 h3 {
   color: white;
   text-align: center;
   font-size: 30px;
   animation: fade-in 2s ease;
-}
-
-h2 {
-  color: white;
-  text-align: center;
-  font-size: 20px;
 }
 
 h4 {
@@ -60,40 +60,29 @@ h4 {
   height: 50px;
 }
 
-.btn.btn-danger {
+.x .btn.btn-danger {
   width: 300px;
   height: 80px;
   border-radius: 50px;
 }
-
-.btn.btn-outline-light {
-  width: 200px;
-  height: 25px;
-  border-radius: 30px;
-}
-
-.input-group:hover {
+.x .input-group:hover {
   padding-top: 5px;
   transition: padding-top 0.5s;
 }
-
-.input-group {
+.x .input-group {
   padding-top: 0px;
   transition: padding-top 0.5s;
 }
-
-.enter_name {
+.x .enter_name {
   padding-top: 100px;
   width: 300px;
   margin: auto;
 }
-
-.enter_pass {
+.x .enter_pass {
   width: 300px;
   margin: auto;
 }
-
-.form-control {
+.x .form-control {
   width: 80px;
   height: 50px;
   text-align: center;
@@ -102,8 +91,7 @@ h4 {
   color: white;
   border-radius: 20px;
 }
-
-.form-control:focus {
+.x .form-control:focus {
   width: 80px;
   background: black;
   color: white;
@@ -111,19 +99,22 @@ h4 {
   border-color: #C70039;
   box-shadow: 0 0 10px red;
 }
-
-.form-control::placeholder {
+.x .form-control::placeholder {
   color: #61677A;
 }
-
-.custom-tooltip {
+.x .custom-tooltip {
   --bs-tooltip-bg: var(--bd-violet-bg);
   --bs-tooltip-color: var(--bs-white);
 }
-
-.play {
+.x .play {
   padding-top: 20px;
   text-align: center;
+}
+
+.btn.btn-outline-light {
+  width: 200px;
+  height: 25px;
+  border-radius: 30px;
 }
 
 .leaderboard {
@@ -205,7 +196,11 @@ h4 {
 }
 
 .page_down_2 {
-  height: 120px;
+  height: 500px;
+}
+.page_down_2 .input-group {
+  width: 300px;
+  margin: auto;
 }
 .page_down_2 .cross_swords {
   width: 60px;
