@@ -1,16 +1,3 @@
-// Colour gradient on page scroll
-
-const [red, green, blue] = [43, 43, 76]
-const section1 = document.querySelector('body')
-
-window.addEventListener('scroll', () => {
-  let y = 1 + (window.scrollY || window.pageYOffset) / 150
-  y = y < 1 ? 1 : y
-  const [r, g, b] = [red/y, green/y, blue/y].map(Math.round)
-  section1.style.backgroundColor = `rgb(${r}, ${g}, ${b})`
-})
-
-
 // Bootstraps form validation
 
 'use strict'

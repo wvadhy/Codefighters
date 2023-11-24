@@ -1,7 +1,7 @@
 // Variables
 $primary-color: black;
 $gradient: linear-gradient(-45deg, #434242, #040D12, #61677A, #272829);
-$secondary-color: #2B2A4C;
+$secondary-color: #132043;
 $text-color: white;
 $title-size: 80px;
 $font: 'Press Start 2P';
@@ -20,7 +20,7 @@ $font: 'Press Start 2P';
 // Objects
 body
 {
-  background-color: $secondary-color;
+  background-color: $primary-color;
   overflow-x: hidden;
   text-align: center;
   transition: background-color 1s ease;
@@ -52,8 +52,10 @@ h3
 
 h4
 {
+  font-size: 20px;
   margin: auto;
-  color: white;
+  color: #F5F7F8;
+  background-color: rgb(10, 0, 0);
 }
 
 // index.html
@@ -78,6 +80,13 @@ h4
     width: 100px;
     height: 100px;
   }
+
+  .current_event
+  {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+  }
 }
 
 .gender
@@ -92,7 +101,7 @@ h4
   margin: auto;
   width: 300px;
   height: 50px;
-  
+
   #temp_img
   {
     width: 100px;
@@ -264,7 +273,6 @@ h4
     text-align: center;
     margin: auto;
     margin-top: 50px;
-
   }
 }
 
@@ -286,7 +294,8 @@ h4
 
 .page_down_2
 {
-  height: 500px;
+  height: 650px;
+  background-color: rgb(10, 0, 0);
 
   .form-label
   {
@@ -311,9 +320,18 @@ h4
 
   .cross_swords
   {
-    margin-top: 20px;
     width: 60px;
     height: 60px;
+  }
+
+  .nav.nav-underline
+  {
+    justify-content: center;
+  }
+
+  .nav-link
+  {
+    color: #BE3144;
   }
 }
 

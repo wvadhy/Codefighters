@@ -1,5 +1,5 @@
 body {
-  background-color: #2B2A4C;
+  background-color: black;
   overflow-x: hidden;
   text-align: center;
   transition: background-color 1s ease;
@@ -27,8 +27,10 @@ h3 {
 }
 
 h4 {
+  font-size: 20px;
   margin: auto;
-  color: white;
+  color: #F5F7F8;
+  background-color: rgb(10, 0, 0);
 }
 
 .intro {
@@ -43,6 +45,11 @@ h4 {
   height: 40px;
 }
 .intro .sword_r {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+}
+.intro .current_event {
   position: absolute;
   width: 100px;
   height: 100px;
@@ -208,7 +215,8 @@ h4 {
 }
 
 .page_down_2 {
-  height: 500px;
+  height: 650px;
+  background-color: rgb(10, 0, 0);
 }
 .page_down_2 .form-label {
   text-align: center;
@@ -226,9 +234,14 @@ h4 {
   border-radius: 20px;
 }
 .page_down_2 .cross_swords {
-  margin-top: 20px;
   width: 60px;
   height: 60px;
+}
+.page_down_2 .nav.nav-underline {
+  justify-content: center;
+}
+.page_down_2 .nav-link {
+  color: #BE3144;
 }
 
 #cursor {
