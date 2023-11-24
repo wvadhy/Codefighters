@@ -1,6 +1,7 @@
 // Variables
 $primary-color: black;
 $gradient: linear-gradient(-45deg, #434242, #040D12, #61677A, #272829);
+$secondary-color: #2B2A4C;
 $text-color: white;
 $title-size: 80px;
 $font: 'Press Start 2P';
@@ -19,7 +20,7 @@ $font: 'Press Start 2P';
 // Objects
 body
 {
-  background-color: $primary-color;
+  background-color: $secondary-color;
   overflow-x: hidden;
   text-align: center;
   transition: background-color 1s ease;
@@ -89,8 +90,27 @@ h4
   border-radius: 30px;
   padding-top: 20px;
   margin: auto;
-  width: 100px;
+  width: 300px;
   height: 50px;
+  
+  #temp_img
+  {
+    width: 100px;
+    height: 110px;
+  }
+
+  img
+  {
+    border-radius: 15px;
+  }
+
+  img:hover
+  {
+    background-color: #B31312;
+    transition: background-color 0.5s;
+    border-radius: 15px;
+  }
+
 }
 
 .x
@@ -291,6 +311,7 @@ h4
 
   .cross_swords
   {
+    margin-top: 20px;
     width: 60px;
     height: 60px;
   }

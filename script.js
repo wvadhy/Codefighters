@@ -1,6 +1,6 @@
 // Colour gradient on page scroll
 
-const [red, green, blue] = [20, 0, 0]
+const [red, green, blue] = [43, 43, 76]
 const section1 = document.querySelector('body')
 
 window.addEventListener('scroll', () => {
