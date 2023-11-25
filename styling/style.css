@@ -5,14 +5,6 @@ body {
   transition: background-color 1s ease;
 }
 
-h1 {
-  color: white;
-  text-align: center;
-  font-size: 80px;
-  font-family: "Press Start 2P";
-  animation: wobbly 1s ease infinite;
-}
-
 h2 {
   color: white;
   text-align: center;
@@ -23,14 +15,7 @@ h3 {
   color: white;
   text-align: center;
   font-size: 30px;
-  animation: fade-in 2s ease;
-}
-
-h4 {
-  font-size: 20px;
-  margin: auto;
-  color: #F5F7F8;
-  background-color: rgb(10, 0, 0);
+  animation: fade-in 1s ease;
 }
 
 .intro {
@@ -38,6 +23,13 @@ h4 {
   display: flex;
   justify-content: center;
   align-items: baseline;
+}
+.intro h1 {
+  color: white;
+  text-align: center;
+  font-size: 80px;
+  font-family: "Press Start 2P";
+  animation: wobbly 1s ease infinite;
 }
 .intro .git_branch {
   position: absolute;
@@ -84,6 +76,20 @@ h4 {
   height: 80px;
   border-radius: 50px;
 }
+.x .btn.btn-warning {
+  position: absolute;
+  margin-top: 15px;
+  margin-left: 10px;
+  height: 50px;
+  width: 50px;
+  border-radius: 25px;
+  box-shadow: 0px 0px 0px black;
+  transition: box-shadow 0.5s;
+}
+.x .btn.btn-warning:hover {
+  box-shadow: 0px 0px 10px gold;
+  transition: box-shadow 0.5s;
+}
 .x .input-group:hover {
   padding-top: 5px;
   transition: padding-top 0.5s;
@@ -122,8 +128,8 @@ h4 {
   color: #61677A;
 }
 .x .custom-tooltip {
-  --bs-tooltip-bg: var(--bd-violet-bg);
-  --bs-tooltip-color: var(--bs-white);
+  --bs-tooltip-bg: red;
+  --bs-tooltip-color: var(--bs-red);
 }
 .x .play {
   padding-top: 20px;
@@ -158,8 +164,27 @@ h4 {
 
 .footer_area {
   background-color: #0F0F0F;
-  height: 400px;
+  height: 350px;
   text-align: center;
+}
+.footer_area .nav {
+  justify-content: center;
+  border-width: 0px;
+}
+.footer_area .nav .nav-item .nav-link {
+  color: white;
+  font-weight: bold;
+  background-color: #0F0F0F;
+  border-width: 0px;
+  transition: color 0.5s;
+}
+.footer_area .nav .nav-item .nav-link:hover {
+  color: red;
+  transition: color 0.5s;
+}
+.footer_area .nav .nav-item #premium-tab:hover {
+  color: gold;
+  transition: color 0.5s;
 }
 .footer_area .pagination {
   margin: auto;
@@ -171,6 +196,8 @@ h4 {
 .footer_area .carousel {
   border-radius: 55px 55px 55px 55px;
   overflow: hidden;
+  width: 500px;
+  margin: auto;
 }
 .footer_area .sword {
   position: absolute;
@@ -214,8 +241,87 @@ h4 {
   -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
 }
 
+.crown_div {
+  background-color: rgb(10, 0, 0);
+}
+.crown_div .crown {
+  width: 50px;
+  height: 50px;
+}
+
+.rankings {
+  height: 50px;
+  background-color: rgb(10, 0, 0);
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+}
+.rankings .sword_tilt_l {
+  margin-right: 350px;
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  animation: rotate 0.6s linear infinite;
+  animation-play-state: paused;
+  animation-delay: calc(var(--scroll) * -1s);
+  animation-iteration-count: 1;
+  animation-fill-mode: both;
+}
+.rankings .sword_tilt_r {
+  margin-left: 350px;
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  animation: rotate 0.6s linear infinite;
+  animation-play-state: paused;
+  animation-delay: calc(var(--scroll) * -1s);
+  animation-iteration-count: 1;
+  animation-fill-mode: both;
+}
+
+.rankings_data {
+  background-color: rgb(10, 0, 0);
+  height: 350px;
+}
+.rankings_data .btn {
+  width: 180px;
+  animation: fade-in 0.8s linear infinite;
+  animation-play-state: paused;
+  animation-delay: calc(var(--scroll) * -1s);
+  animation-iteration-count: 1;
+  animation-fill-mode: both;
+}
+
+.winged_div {
+  background-color: rgb(10, 0, 0);
+  height: 100px;
+}
+.winged_div .winged {
+  width: 100px;
+  height: 100px;
+}
+
+.search {
+  background-color: #0F0F0F;
+  height: 100px;
+}
+.search .form-control {
+  width: 300px;
+  border-radius: 20px;
+  background-color: white;
+  box-shadow: 10px 10px 10px #C70039;
+  border-style: double;
+  margin: auto;
+}
+
 .page_down_2 {
-  height: 650px;
+  height: 630px;
+  background-color: rgb(10, 0, 0);
+}
+.page_down_2 h4 {
+  font-size: 20px;
+  margin: auto;
+  color: #F5F7F8;
   background-color: rgb(10, 0, 0);
 }
 .page_down_2 .form-label {
@@ -252,8 +358,33 @@ h4 {
   height: 30px;
 }
 
-.countdown {
+.container {
+  position: relative;
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+}
+
+.skull {
+  width: 100px;
+  height: 100px;
   margin-top: 20%;
+}
+
+.bottom-left {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  top: 80%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: red;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px red;
+}
+
+.countdown {
+  margin-top: 1%;
   display: flex;
   justify-content: center;
 }
@@ -261,12 +392,12 @@ h4 {
 .load {
   display: flex;
   justify-content: center;
-  padding-top: 10px;
+  color: white;
 }
 .load #spin {
   margin: auto;
-  width: 80px;
-  height: 80px;
+  width: 60px;
+  height: 60px;
   box-shadow: 0px 0px 40px red;
   background-color: red;
 }
@@ -277,14 +408,16 @@ h4 {
 .back_g .in_container {
   display: flex;
   justify-content: center;
-  padding-top: 400px;
+  padding-top: 700px;
 }
 .back_g .in {
   width: 450px;
-  height: 300px;
+  height: 50px;
   border-radius: 10px;
   border-width: medium;
   border-style: outset;
+  text-align: center;
+  text-decoration: underline;
 }
 .back_g .progress {
   width: 400px;
@@ -299,6 +432,7 @@ h4 {
   color: white;
   font-family: "Press Start 2P";
   font-size: 80px;
+  background-color: inherit;
 }
 .back_g #p1_user {
   color: #D8D9DA;
@@ -344,6 +478,11 @@ h4 {
   }
   to {
     opacity: 1;
+  }
+}
+@keyframes rotate {
+  to {
+    transform: rotate(360deg);
   }
 }
 

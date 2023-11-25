@@ -26,15 +26,6 @@ body
   transition: background-color 1s ease;
 }
 
-h1
-{
-  color: $text-color;
-  text-align: center;
-  font-size: $title-size;
-  font-family: $font;
-  animation: wobbly 1s ease infinite;
-}
-
 h2
 {
   color: $text-color;
@@ -47,15 +38,7 @@ h3
   color: $text-color;
   text-align: center;
   font-size: 30px;
-  animation: fade-in 2s ease;
-}
-
-h4
-{
-  font-size: 20px;
-  margin: auto;
-  color: #F5F7F8;
-  background-color: rgb(10, 0, 0);
+  animation: fade-in 1s ease;
 }
 
 // index.html
@@ -65,6 +48,15 @@ h4
   display: flex;
   justify-content: center;
   align-items: baseline;
+
+  h1
+  {
+    color: $text-color;
+    text-align: center;
+    font-size: $title-size;
+    font-family: $font;
+    animation: wobbly 1s ease infinite;
+  }
 
   .git_branch
   {
@@ -131,6 +123,24 @@ h4
     border-radius: 50px;
   }
 
+  .btn.btn-warning
+  {
+    position: absolute;
+    margin-top: 15px;
+    margin-left: 10px;
+    height: 50px;
+    width: 50px;
+    border-radius: 25px;
+    box-shadow: 0px 0px 0px black;
+    transition: box-shadow 0.5s;
+  }
+
+  .btn.btn-warning:hover
+  {
+    box-shadow: 0px 0px 10px gold;
+    transition: box-shadow 0.5s;
+  }
+
   .input-group:hover
   {
     padding-top: 5px;
@@ -177,8 +187,8 @@ h4
   }
 
   .custom-tooltip {
-    --bs-tooltip-bg: var(--bd-violet-bg);
-    --bs-tooltip-color: var(--bs-white);
+    --bs-tooltip-bg: red;
+    --bs-tooltip-color: var(--bs-red);
   }
 
   .play
@@ -223,8 +233,37 @@ h4
 .footer_area
 {
   background-color: #0F0F0F;
-  height: 400px;
+  height: 350px;
   text-align: center;
+
+  .nav
+  {
+    justify-content: center;
+    border-width: 0px;
+    .nav-item
+    {
+      .nav-link
+      {
+        color: white;
+        font-weight: bold;
+        background-color: #0F0F0F;
+        border-width: 0px;
+        transition: color 0.5s;
+      }
+
+      .nav-link:hover
+      {
+        color: red;
+        transition: color 0.5s;
+      }
+
+      #premium-tab:hover
+      {
+        color: gold;
+        transition: color 0.5s;
+      }
+    }
+  }
 
   .pagination
   {
@@ -240,6 +279,8 @@ h4
   .carousel {
     border-radius: 55px 55px 55px 55px;
     overflow: hidden;
+    width: 500px;
+    margin: auto;
   }
 
   .sword
@@ -292,10 +333,109 @@ h4
   -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
 }
 
+.crown_div
+{
+  background-color: rgb(10, 0, 0);
+  .crown
+  {
+    width: 50px;
+    height: 50px;
+  }
+}
+
+.rankings
+{
+  height: 50px;
+  background-color: rgb(10, 0, 0);
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+
+  .sword_tilt_l
+  {
+    margin-right: 350px;
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    animation: rotate 0.6s linear infinite;
+    animation-play-state: paused;
+    animation-delay: calc(var(--scroll) * -1s);
+
+    animation-iteration-count: 1;
+    animation-fill-mode: both;
+  }
+
+  .sword_tilt_r
+  {
+    margin-left: 350px;
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    animation: rotate 0.6s linear infinite;
+    animation-play-state: paused;
+    animation-delay: calc(var(--scroll) * -1s);
+
+    animation-iteration-count: 1;
+    animation-fill-mode: both;
+  }
+}
+
+.rankings_data
+{
+  background-color: rgb(10, 0, 0);
+  height: 350px;
+
+  .btn
+  {
+    width: 180px;
+    animation: fade-in 0.8s linear infinite;
+    animation-play-state: paused;
+    animation-delay: calc(var(--scroll) * -1s);
+
+    animation-iteration-count: 1;
+    animation-fill-mode: both;
+  }
+}
+
+.winged_div
+{
+  background-color: rgb(10, 0, 0);
+  height: 100px;
+  .winged
+  {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+.search
+{
+  background-color: #0F0F0F;
+  height: 100px;
+
+  .form-control
+  {
+    width: 300px;
+    border-radius: 20px;
+    background-color: white;
+    box-shadow: 10px 10px 10px #C70039;
+    border-style: double;
+    margin: auto;
+  }
+}
+
 .page_down_2
 {
-  height: 650px;
+  height: 630px;
   background-color: rgb(10, 0, 0);
+
+  h4
+  {
+    font-size: 20px;
+    margin: auto;
+    color: #F5F7F8;
+    background-color: rgb(10, 0, 0);
+  }
 
   .form-label
   {
@@ -344,9 +484,37 @@ h4
 }
 
 // loading.html
+
+.container
+{
+  position: relative;
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+}
+
+.skull
+{
+  width: 100px;
+  height: 100px;
+  margin-top: 20%;
+}
+
+.bottom-left {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  top: 80%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: red;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px red;
+}
+
 .countdown
 {
-  margin-top: 20%;
+  margin-top: 1%;
   display: flex;
   justify-content: center;
 }
@@ -355,13 +523,13 @@ h4
 {
   display: flex;
   justify-content: center;
-  padding-top: 10px;
+  color: white;
 
   #spin
   {
     margin: auto;
-    width: 80px;
-    height: 80px;
+    width: 60px;
+    height: 60px;
     box-shadow: 0px 0px 40px red;
     background-color: red;
   }
@@ -376,16 +544,18 @@ h4
   {
     display: flex;
     justify-content: center;
-    padding-top: 400px;
+    padding-top: 700px;
   }
 
   .in
   {
     width: 450px;
-    height: 300px;
+    height: 50px;
     border-radius: 10px;
     border-width: medium;
     border-style: outset;
+    text-align: center;
+    text-decoration: underline;
   }
 
   .progress
@@ -404,6 +574,7 @@ h4
     color: white;
     font-family: $font;
     font-size: 80px;
+    background-color: inherit;
   }
 
   #p1_user
@@ -454,4 +625,10 @@ h4
 {
   from { opacity: 0; }
   to { opacity: 1; }
+}
+
+@keyframes rotate {
+  to {
+    transform: rotate(360deg);
+  }
 }
