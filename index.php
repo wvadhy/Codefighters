@@ -1,5 +1,19 @@
 <?php
   include_once 'header.php';
+
+  if ($_POST["submit_search"]){
+
+    require_once 'dbh.inc.php';
+    require_once 'functions.inc.php';
+
+    $name = $_POST["searching"];
+
+    if (userNameExists($conn, $name) !== false) {
+        $verified_name = $name;
+    } else {
+        $verified_name = "No users exist with that name";
+    }
+  }
 ?>
 
 <body onload="fade();" style="background-image: url('imgs/loading_bg_1.gif');">
@@ -26,91 +40,140 @@
   <span class="badge rounded-pill text-bg-secondary">premium disabled</span>
 
   <!-- Motto -->
-  <div class="">
-    <h3>
-      Create your warrior...
-    </h3>
-  </div>
+  <?php
+    if (!isset($_SESSION["username"])) {
+      echo "<div class=''>
+              <h3>
+                Create your warrior...
+              </h3>
+            </div>";
+    }
+  ?>
 
   <!-- Gender select -->
-  <div class="gender">
-    <div class="btn-group me-2" role="group" aria-label="First group">
-      <button type="button" class="btn btn-dark">
-        Male
-      </button>
-      <button type="button" class="btn btn-dark">
-        Female
-      </button>
-    </div>
-  </div>
+  <?php
+    if (!isset($_SESSION["username"])) {
+      echo "<div class='gender'>
+              <div class='btn-group me-2' role='group' aria-label='First group'>
+                <button type='button' class='btn btn-dark'>
+                  Male
+                </button>
+                <button type='button' class='btn btn-dark'>
+                  Female
+                </button>
+              </div>
+            </div>";
+    }
+  ?>
 
   <!-- Customisation -->
-  <div class="customisation">
-    <div class="row">
-      <div class="col-sm">
-        <div class="arrows left">
-          <div class="arrow left mb-2" data-avatar-index="1">
-            <img src="imgs/arrow-left-circle.svg" alt="">
+  <?php
+    if (!isset($_SESSION["username"])) {
+      echo "<div class='customisation'>
+        <div class='row'>
+          <div class='col-sm'>
+            <div class='arrows left'>
+              <div class='arrow left mb-2' data-avatar-index='1'>
+                <img src='imgs/arrow-left-circle.svg' alt=''>
+              </div>
+              <div class='arrow left mb-2' data-avatar-index='2'>
+                <img src='imgs/arrow-left-circle.svg' alt=''>
+              </div>
+              <div class='arrow left mb-2' data-avatar-index='3'>
+                <img src='imgs/arrow-left-circle.svg' alt=''>
+              </div>
+            </div>
           </div>
-          <div class="arrow left mb-2" data-avatar-index="2">
-            <img src="imgs/arrow-left-circle.svg" alt="">
+          <div class='col-sm'>
+            <img id='temp_img' src='imgs/dark-grey.png' alt=''>
           </div>
-          <div class="arrow left mb-2" data-avatar-index="3">
-            <img src="imgs/arrow-left-circle.svg" alt="">
+          <div class='col-sm'>
+            <div class='arrows right'>
+              <div class='arrow right mb-2' data-avatar-index='1'>
+                <img src='imgs/arrow-right-circle.svg' alt=''>
+              </div>
+              <div class='arrow right mb-2' data-avatar-index='2'>
+                <img src='imgs/arrow-right-circle.svg' alt=''>
+              </div>
+              <div class='arrow right mb-2' data-avatar-index='3'>
+                <img src='imgs/arrow-right-circle.svg' alt=''>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="col-sm">
-        <img id="temp_img" src="imgs/dark-grey.png" alt="">
-      </div>
-      <div class="col-sm">
-        <div class="arrows right">
-          <div class="arrow right mb-2" data-avatar-index="1">
-            <img src="imgs/arrow-right-circle.svg" alt="">
-          </div>
-          <div class="arrow right mb-2" data-avatar-index="2">
-            <img src="imgs/arrow-right-circle.svg" alt="">
-          </div>
-          <div class="arrow right mb-2" data-avatar-index="3">
-            <img src="imgs/arrow-right-circle.svg" alt="">
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+      </div>";
+    }
+  ?>
 
   <form action="includes/signup.inc.php" method="post" class="x needs-validation" novalidate>
-    <!-- Name input -->
-    <div class="enter_name">
-      <div class="input-group mb-3">
-        <input name="username" type="text" class="form-control" placeholder="Your name?" aria-label="Username" required>
-      </div>
-    </div>
-
-    <!-- Password input -->
-    <div class="enter_pass">
-      <div class="input-group mb-3"
-            data-bs-toggle="tooltip" data-bs-placement="right"
-            data-bs-custom-class="custom-tooltip"
-            data-bs-title="Password must be 8 characters">
-        <input id="pswrd" name="password" type="password" class="form-control" placeholder="Your password?" aria-label="Password" required>
-      </div>
-    </div>
+    <?php
+      if (isset($_SESSION["username"])){
+        echo "<h3 style='margin-top: 100px;'>Ready to fight " . $_SESSION["username"] . "?</h3>";
+      } else {
+        echo "<div class='enter_name'>
+                <div class='input-group mb-3'>
+                  <input name='username' type='text' class='form-control' placeholder='Your name?' aria-label='Username' required>
+                </div>
+              </div>";
+        echo "<div class='enter_pass'>
+                <div class='input-group mb-3'
+                  data-bs-toggle='tooltip' data-bs-placement='right'
+                  data-bs-custom-class='custom-tooltip'
+                  data-bs-title='Password must be 8 characters'>
+                  <input id='pswrd' name='password' type='password' class='form-control' placeholder='Your password?' aria-label='Password' required>
+                </div>
+              </div>";
+      }
+    ?>
 
     <!-- Play button -->
     <div class="play">
-      <a href="loading.html">
-        <button type="submit" name="submit" class="btn btn-danger btn-lg">
-          <strong>FIGHT</strong>
-        </button>
-      </a>
-      <button type="button" class="btn btn-warning"
-        data-bs-toggle="tooltip" data-bs-placement="right"
-        data-bs-custom-class="custom-tooltip"
-        data-bs-title="Get premium">
-        <img src="imgs/gem.svg" alt="">
-      </button>
+        <?php
+          if (isset($_GET["error"])){
+            if($_GET["error"] == "usernametaken"){
+              echo "<h6 style='color: #EEE2DE;'>Username already taken!</h6>";
+            }
+            elseif($_GET["error"] == "incorrectPassword"){
+              echo "<h6 style='color: #EEE2DE;'>Incorrect password!</h6>";
+            }
+            elseif($_GET["error"] == "wrongLogin"){
+              echo "<h6 style='color: #EEE2DE;'>Account does not exist!</h6>";
+            }
+            elseif($_GET["error"] == "None"){
+              echo "<h6 style='color: #9ADE7B;'>Successfully signed up!</h6>";
+            }
+          }
+        ?>
+        <?php
+          if (isset($_SESSION["username"])){
+            echo "<button type='button' class='btn btn-danger'><strong>FIGHT</strong></button>";
+            echo "<button type='button' class='btn btn-warning'
+                    data-bs-toggle='tooltip' data-bs-placement='right'
+                    data-bs-custom-class='custom-tooltip'
+                    data-bs-title='Get premium'>
+                    <img src='imgs/gem.svg' alt=''>
+                  </button>";
+          }
+          else {
+            echo "<button type='submit' name='submit' class='btn btn-danger'><strong>Sign-up</strong></button>";
+            echo "<button type='button' class='btn btn-warning'
+                    data-bs-toggle='tooltip' data-bs-placement='right'
+                    data-bs-custom-class='custom-tooltip'
+                    data-bs-title='Get premium'>
+                    <img src='imgs/gem.svg' alt=''>
+                  </button>";
+          }
+        ?>
     </div>
+    <?php
+      if (isset($_SESSION["username"])){
+        echo "<a href='includes/logout.inc.php'>
+                <button type='button' name='submit_logout' class='btn btn-dark'><strong>Logout</strong></button>
+              </a>";
+      }else {
+        echo "<button type='submit' name='submit_login' class='btn btn-dark'><strong>Login</strong></button>";
+      }
+    ?>
   </form>
 
   <!-- Leadeboard -->
@@ -279,7 +342,16 @@
         </div>
       </div>
       <div class="tab-pane fade" id="account-tab-pane" role="tabpanel" aria-labelledby="account-tab" tabindex="0">
-        <h6 style="color: #F5F5F5;">Please login to see data...</h6>
+        <?php
+          if (isset($_SESSION["username"])){
+              echo "<h5 style='color: #F5F5F5;'>Welcome back solider.</h5>";
+              echo "<br>";
+              echo "<h6 style='color: #F5F5F5;'>Current elo: <code>" . $_SESSION["elo"] . "</code></h6>";
+          }
+          else {
+            echo "<h5 style='color: #EEE2DE;''>Please login to see data...</h5>";
+          }
+        ?>
       </div>
     </div>
   </div>
@@ -318,10 +390,15 @@
 </div>
 
 <img style="background-color: rgb(10, 0, 0);" src="imgs/search_wave.svg" alt="">
-<div class="search">
+
+<form action="includes/signup.inc.php" class="search" method="post">
   <h3>Find players <img src="imgs/search.svg" alt=""></h3>
-  <input class="form-control" type="search" placeholder="Search" aria-label="Search">
-</div>
+  <input class="form-control" name="searching" type="search" placeholder="Search" aria-label="Search" required>
+  <br>
+  <button type="submit" name="submit_search" class="btn btn-outline-dark">
+    search
+  </button>
+</form>
 
 <img style="background-color: rgb(10, 0, 0);" src="imgs/search_wave_2.svg" alt="">
 
@@ -333,20 +410,32 @@
   <br>
 
   <!-- Contact us -->
-  <form class="z needs-validation" novalidate>
+  <form action="includes/signup.inc.php" method="post" class="z needs-validation" novalidate>
     <div class="mb-3">
       <label for="exampleFormControlInput1" class="form-label">Email</label>
-      <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com" required>
+      <input type="email" name="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com" required>
     </div>
     <div class="input-group mb-3">
       <label for="inputGroupFile01" class="form-label">Screenshot</label>
-      <input type="file" class="form-control" id="inputGroupFile01">
+      <input type="file" name="file" class="form-control" id="inputGroupFile01">
     </div>
     <div class="mb-3">
       <label for="exampleFormControlTextarea1" class="form-label">Description of bug</label>
-      <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" required></textarea>
+      <textarea class="form-control" name="description" id="exampleFormControlTextarea1" rows="3" required></textarea>
     </div>
-    <button type="submit" class="btn btn-outline-danger mb-3">SEND</button>
+    <?php
+    if (isset($_GET["sent"])){
+      if ($_GET["sent"] == "success"){
+        echo "<button type='submit' class='btn btn-success mb-3'>
+                SENT!
+              </button>";
+      }
+    } else {
+        echo "<button type='submit' name='submit_contact' class='btn btn-outline-danger mb-3'>
+                SEND
+              </button>";
+    }
+    ?>
   </form>
 
   <!-- Informal footer -->

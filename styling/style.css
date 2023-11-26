@@ -73,8 +73,14 @@ h3 {
 
 .x .btn.btn-danger {
   width: 300px;
-  height: 80px;
-  border-radius: 50px;
+  height: 50px;
+  border-radius: 20px;
+}
+.x .btn.btn-dark {
+  margin-top: 5px;
+  width: 300px;
+  height: 50px;
+  border-radius: 20px;
 }
 .x .btn.btn-warning {
   position: absolute;
@@ -132,7 +138,6 @@ h3 {
   --bs-tooltip-color: var(--bs-red);
 }
 .x .play {
-  padding-top: 20px;
   text-align: center;
 }
 
@@ -303,15 +308,22 @@ h3 {
 
 .search {
   background-color: #0F0F0F;
-  height: 100px;
+  height: 300px;
+  justify-content: center;
 }
 .search .form-control {
   width: 300px;
+  height: 50px;
   border-radius: 20px;
   background-color: white;
   box-shadow: 10px 10px 10px #C70039;
   border-style: double;
   margin: auto;
+}
+.search .btn-outline-dark {
+  width: 150px;
+  height: 40px;
+  border-radius: 15px;
 }
 
 .page_down_2 {
